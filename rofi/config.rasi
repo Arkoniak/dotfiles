@@ -32,7 +32,7 @@ configuration {
 @import "~/.config/ml4w/settings/rofi-font.rasi"
 
 /* ---- Load colors ---- */
-@theme "~/.config/rofi/colors.rasi"
+//@theme "~/.config/rofi/colors.rasi"
 
 /* ---- Load wallpaper ---- */
 @import "~/.cache/ml4w/hyprland-dotfiles/current_wallpaper.rasi"
@@ -247,3 +247,5 @@ textbox {
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
+
+@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
