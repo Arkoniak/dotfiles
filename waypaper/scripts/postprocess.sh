@@ -4,6 +4,8 @@ CACHE_FOLDER=~/.cache/wallpaper
 CURRENT_WALLPAPER=$CACHE_FOLDER/current_wallpaper
 DEFAULT_WALLPAPER=~/Pictures/Wallpapers/default.jpg
 BLURRED_WALLPAPER=/tmp/blurred_wallpaper.jpg
+BLURRED_WALLPAPER_PNG=$CACHE_FOLDER/blurred_wallpaper.png
+SQUARE_WALLPAPER=$CACHE_FOLDER/square_wallpaper.png
 
 # Setup wallpaper
 mkdir -p $CACHE_FOLDER
@@ -22,6 +24,8 @@ fi
 
 # Generate blurred wallpaper for wlogout
 magick $WALLPAPER -resize 75% -blur "50x30" $BLURRED_WALLPAPER
+magick $BLURRED_WALLPAPER $BLURRED_WALLPAPER_PNG
+magick $WALLPAPER -gravity Center -extent 1:1 $SQUARED_WALLPAPER
 
 # Generate matugen palettes
 matugen image $WALLPAPER -m "dark"

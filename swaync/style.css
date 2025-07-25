@@ -1,0 +1,69 @@
+/* Colors */
+
+@import 'colors.css';
+
+@define-color background @surface;
+@define-color fontcolor @on_surface;
+@define-color bordercolor @outline;
+@define-color buttoncolor @primary;
+@define-color buttonhover @primary_container;
+@define-color buttontext @on_primary;
+@define-color hovertext @on_primary_container;
+@define-color notifbackground @surface_container_low;
+@define-color groupheadercolor @on_surface_variant;
+
+* {
+    font-family: "Fira Sans Semibold";
+}
+
+/* Control Center */
+
+.control-center {
+    background-color: @blur_background8;
+    border: 2px solid @bordercolor;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+button {
+    background-color: @buttoncolor;
+    color: @buttontext;
+    border: 0px;
+    border-radius: 6px;
+    min-width: 35px;
+    padding: 5px 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+button:hover {
+    background-color: @buttonhover;
+    color: @hovertext;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    margin:5px;
+}
+
+.notification-group-header {
+    font-size: 14px;
+    color: @groupheadercolor;
+}
+
+/* Notification */
+
+.notification {
+    background-color: @notifbackground;
+    color: @fontcolor;
+    border: 2px solid @bordercolor;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background-color: @primary_container;
+    color: @hovertext;
+    border-radius: 6px;
+    /* color: #ffffff; */
+    /* background: transparent; */
+}

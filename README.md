@@ -34,4 +34,14 @@ When `waypaper` initiates it sets random wallpaper from the Wallpapers directory
 Postprocessing includes following steps
 1. Create symlink to the new wallpaper in `~/.cache/wallpaper/current_wallpaper`
 2. Generates colorschemes with the help of `matugen`  which are distributed throughout configs.
-3. Restart `hyprland` and `waybar`
+3. Restart `hyprland`, `waybar` and `swaync`
+
+## Colors
+
+Colors are generated with `matugen`, when `waypaper` sets new wallpaper. You can find corresponding palettes templates in `~/.config/matugen/templates` and distribution points in `~/.config/matugen/config.toml`
+
+## Notifications
+
+Notifications are generated with the help of `swaync`. If you update `style.css`, you can immediately see results with `swaync-client -rs` to refresh colors and `swaync-client -t` to see notification center itself.
+
+If you need extra modifications, you can find complete `style.css` in `/etc/xdg/swaync/style.css`
