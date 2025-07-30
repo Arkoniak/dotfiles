@@ -1,16 +1,4 @@
 {
-    "tray": {
-        "icon-size": 20,
-        "spacing": 4,
-    },
-
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "$HOME/.config/wlogout/scripts/wlogout.sh",
-        "tooltip": true,
-        "tooltip-format": "WLogout menu"
-    },
-
     "clock": {
         "interval": 1,
         //"format": " {:%I:%M %p}", // AM PM format
@@ -32,46 +20,29 @@
         }
     },
 
-    "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace r-1",
-        "on-scroll-down": "hyprctl dispatch workspace r+1",
-        "on-click": "activate",
-        "active-only": false,
-        "all-outputs": true,
-        "format": "{}",
-        "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
-        },
-        "persistent-workspaces": {
-            "*": 5
-        }
+    "tray": {
+        "icon-size": 20,
+        "spacing": 4,
     },
 
     "cpu": {
-        "format": "{usage}% 󰍛",
+        "format": "{usage}% 󰘚",
         "interval": 1,
         "min-length": 5,
         "format-alt-click": "click",
-        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰘚",
         "format-icons": [
             "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
         ],
     },
 
     "temperature": {
-        // "interval": 10,
         "tooltip": true,
-        // "hwmon-path": [
-        //     "/sys/class/thermal/thermal_zone0/temp"
-        // ],
-        //"thermal-zone": 0,
         "critical-threshold": 82,
         "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": [
-            "󰈸"
+            "󰔏"
         ],
     },
 
@@ -95,5 +66,52 @@
         "format": "{percentage_used}% 󰋊",
         //"tooltip": true,
         "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
+    },
+
+    // Pulseaudio
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    // Bluetooth
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
+    },
+
+    // Network
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": "  {ifname}",
+        "format-disconnected": "Disconnected ⚠",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        // "on-click": "~/.config/ml4w/settings/networkmanager.sh",
+        // "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
     },
 }

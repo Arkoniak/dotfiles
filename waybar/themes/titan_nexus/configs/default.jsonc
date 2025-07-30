@@ -4,7 +4,7 @@
 
 {
     "include": [
-        "modules/misc.jsonc",
+        "modules/titan.jsonc",
         "modules/workspaces.jsonc",
         "modules/custom.jsonc",
         "modules/groups.jsonc",
@@ -16,10 +16,11 @@
     "passthrough": false,
 
     "modules-left": [
-        "clock#titannexus",
+        "clock",
+        "pulseaudio",
         "custom/swaync",
         "tray",
-        "custom/media"
+        "custom/media",
     ],
 
     "modules-center": [
