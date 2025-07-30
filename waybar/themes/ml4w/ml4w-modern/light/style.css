@@ -14,4 +14,4 @@
  @define-color textcolor3 @on_surface;
  @define-color iconcolor @on_surface;
  
-@import 'themes/ml4w-modern/style.css';
+@import 'themes/ml4w/ml4w-modern/style.css';

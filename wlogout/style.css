@@ -36,8 +36,8 @@ window {
 }
 
 button {
-    background-color: @primary;
-    color: @on_primary;
+    background-color: @primary_container;
+    color: @on_primary_container;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 20%;
@@ -54,8 +54,8 @@ button:focus {
 }
 
 button:hover {
-    background-color: @primary_container;
-    color: @on_primary_container;
+    background-color: @primary;
+    color: @on_primary;
     /* background-color: @on_primary; */
     /* background-color: #808080; */
 	opacity: 0.8;

@@ -1,0 +1,218 @@
+/* Colors */
+
+@import 'colors.css';
+
+@define-color background @surface;
+@define-color fontcolor @on_surface;
+@define-color bordercolor @outline;
+@define-color buttoncolor @primary;
+@define-color buttonhover @primary_container;
+@define-color buttontext @on_primary;
+@define-color textcolor1 @on_primary;
+@define-color hovertext @on_primary_container;
+@define-color notifbackground @surface_container_low;
+@define-color groupheadercolor @on_surface_variant;
+@define-color workspacesbackground1 @background;
+@define-color workspacesbackground2 @on_surface;
+
+@define-color color8 @background;
+
+@define-color backgroundlight @color8;
+@define-color backgrounddark @on_surface;
+@define-color workspacesbackground1 @color8;
+@define-color workspacesbackground2 @on_surface;
+@define-color bordercolor @color8;
+@define-color textcolor1 @color8;
+@define-color textcolor2 @on_surface;
+@define-color textcolor3 @on_surface;
+@define-color iconcolor @color8;
+
+* {
+    /* font-family: "Fira Sans Semibold", "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: @blur_background8;
+    border-bottom: 0px solid @bordercolor;
+    /* color: #FFFFFF; */
+    /* background: transparent; */
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* ---------------------------------------------------------------
+ * Workspaces
+ * --------------------------------------------------------------- */
+
+#workspaces {
+    background: @surface;
+    margin: 2px 1px 3px 1px;
+    padding: 0px 1px;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    font-size: 16px;
+    color: @textcolor1;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: @on_primary;
+    background-color: @primary;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+}
+
+#workspaces button.active {
+    color: @on_primary;
+    background: @primary;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    color: @on_primary;
+    background: @primary;
+    border-radius: 15px;
+    opacity:0.7;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 16px;
+    background-color: @backgroundlight;
+    opacity:0.9;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @textcolor2;
+}
+
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    /* background-color: @on_secondary; */
+    font-size: 16px;
+    color: @secondary;
+    border-radius: 6px;
+    padding: 2px 10px 0px 10px;
+    margin: 10px 15px 10px 0px;
+}
+
+/* -----------------------------------------------------
+ * Motherboard
+ * ----------------------------------------------------- */
+#motherboard {
+    /* background: @surface; */
+    background: @textcolor1;
+    margin: 2px 1px 3px 1px;
+    padding: 0px 1px;
+    border-radius: 6px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    font-size: 16px;
+    /* color: @textcolor1; */
+    color: @surface;
+}
+
+#cpu,
+#power-profiles-daemon,
+#temperature,
+#disk,
+#memory {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 6px;
+    border: 0px;
+    color: @secondary;
+    background-color: @on_secondary;
+    /* color: @on_secondary; */
+    /* background-color: @secondary; */
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+#tray {
+    /* background: @secondary; */
+    /* color: @textcolor1; */
+    background: @on_secondary;
+    color: @secondary;
+    margin: 2px 1px 3px 1px;
+    padding: 0px 1px;
+    border-radius: 6px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    font-size: 16px;
+}
+
+
+/* -----------------------------------------------------
+ * Custom Swaync
+ * ----------------------------------------------------- */
+/* #mpris, */
+#custom-media,
+#custom-swaync {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 6px;
+    border: 0px;
+    /* background: @secondary; */
+    /* color: @textcolor1; */
+    color: @secondary;
+    background-color: @on_secondary;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+
+/* #custom-power { */
+/*     padding: 0px 6px; */
+/*     margin: 0px 6px 0px 0px; */
+/*     font-size: 25px; */
+/*     border-radius: 5px; */
+/*     color: @on_tertiary; */
+/*     background: @tertiary; */
+/*     opacity: 0.8; */
+/* } */
+
+#custom-power {
+    padding: 0px 6px;
+    /* margin: 4px 3px; */
+    margin: 0px 6px 0px 0px;
+    /* padding: 0px 10px 0px 10px; */
+    font-size: 25px;
+    border-radius: 5px;
+    /* color: @secondary_container; */
+    /* background: @secondary; */
+    color: @on_tertiary;
+    background: @tertiary;
+    opacity: 0.8;
+}

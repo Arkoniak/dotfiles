@@ -1,0 +1,33 @@
+/////////////////////////////////////////
+// Default scheme for Titan Nexus
+/////////////////////////////////////////
+
+{
+    "include": [
+        "modules/misc.jsonc",
+        "modules/workspaces.jsonc",
+        "modules/custom.jsonc",
+        "modules/groups.jsonc",
+    ],
+    "layer": "top",
+    "position": "top",
+    "fixed-center": true,
+    "exclusive": true,
+    "passthrough": false,
+
+    "modules-left": [
+        "clock#titannexus",
+        "custom/swaync",
+        "tray",
+        "custom/media"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces#titannexus"       
+    ],
+
+    "modules-right": [
+        "group/motherboard",
+        "custom/power"
+    ],
+}

@@ -1,0 +1,33 @@
+{
+    // "include": [
+    //     // "modules/misc.jsonc",
+    //     // "modules/workspaces.jsonc",
+    //     "modules/custom.jsonc",
+    //     // "modules/groups.jsonc",
+    // ],
+    "include": [
+        "modules/custom.jsonc",
+        "modules/group.jsonc"
+    ],
+    "layer": "top",
+    "position": "top",
+    "fixed-center": true,
+    "exclusive": true,
+    "passthrough": false,
+ 
+    "modules-left": [
+        "clock"
+    ],
+
+    "modules-center": [
+        "custom/power",
+        "group/motherboard"
+    ],
+
+    // "custom/power": {
+    //     "format": "⏻",
+    //     "on-click": "$HOME/.config/wlogout/scripts/wlogout.sh",
+    //     "tooltip": true,
+    //     "tooltip-format": "WLogout menu"
+    // },
+}

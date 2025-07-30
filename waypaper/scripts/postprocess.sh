@@ -32,7 +32,7 @@ matugen image $WALLPAPER -m "dark"
 
 # Reload Waybar
 sleep 0.5
-$HOME/.config/waybar/scripts/launch.sh
+$HOME/.config/waybar/scripts/launch.sh 2&1> /tmp/waybar_launch.log
 
 # Update SwayNC
 sleep 0.1

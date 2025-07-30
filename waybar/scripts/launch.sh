@@ -17,20 +17,24 @@ WAYBAR_STYLE=$HOME/.config/waybar/style.css
 exec 200>/tmp/waybar-launch.lock
 flock -n 200 || exit 0
 
-kill_proc() {
-    local proc_name="$1"
-
-    if pgrep -x "$proc_name" > /dev/null; then
-        pkill -x "$proc_name"
-    fi
-}
-
-kill_proc waybar
-sleep 0.2
+# kill_proc() {
+#     local proc_name="$1"
+#
+#     if pgrep -x "$proc_name" > /dev/null; then
+#         pkill -x "$proc_name"
+#     fi
+# }
+#
+# kill_proc waybar
+# sleep 0.2
 
 # Check if waybar-disabled file exists
 if [ ! -f $WAYBAR_DISABLED ]; then
-    waybar -c $WAYBAR_CONFIG -s $WAYBAR_STYLE &
+    if ! pgrep -ix waybar > /dev/null; then
+        nohup $HOME/.local/bin/waybar -c $WAYBAR_CONFIG -s $WAYBAR_STYLE -l debug > ~/.local/logs/waybar.log 2>&1 &
+    else
+        pkill -ix -USR2 waybar
+    fi
 else
     echo ":: Waybar disabled"
 fi
